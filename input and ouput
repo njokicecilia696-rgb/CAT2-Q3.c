@@ -1,0 +1,39 @@
+/*
+Njoki Cecilia
+CT100/G/26207/25
+C PROGRAM ON ARRAYS
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+void processorintegers();
+int main () {
+FILE * inFile, *outFile;
+int num, sum =0 , count =0;
+float average;
+
+inFile=fopen("input.txt", "r");
+if (inFile==NULL){
+printf("error opening input.txt for reading!\n");
+exit(1);
+}
+while(fscanf(inFile, "%d", &num) ==1){
+sum +=num;
+count ++;
+}
+fclose(inFile);
+if (count==0){
+printf("no numbers found in input.txt!\n");
+exit(1);
+}
+average=(float) sum /count;
+outFile=fopen("output.txt", "w");
+if(outFile==NULL){
+printf("error in opening output.txt for writing!\n");
+exit (1);
+}
+fprintf(outFile, "Sum= %d\nAverage = %.2f\n",sum, average);
+fclose(outFile);
+printf("sum and average written to otput.txt\n\n");
+return 0;
+}

@@ -1,0 +1,29 @@
+/*
+Njoki Cecilia
+CT100/G/26207/25
+C PROGRAM ON ARRAYS
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+void writtenintegersTofile();
+int main (){
+FILE *fptr;
+int num ,i;
+fptr=fopen("input.txt", "w");
+if (fptr==NULL){
+printf("error opening input.txt for writing!\n");
+exit(1);
+}
+printf("enter your integers: \n");
+for(i=0; i<10; i++){
+printf("number %d:", i + 1);
+scanf("%d", &num);
+fprintf(fptr,"%d", num);
+}
+fclose(fptr);
+printf("data successfully written to input.txt\n\n");
+return 0;
+}
+
+    

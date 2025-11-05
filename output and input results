@@ -1,0 +1,34 @@
+/*
+Njoki Cecilia
+CT100/G/26207/25
+C PROGRAM ON ARRAYS
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+void displayfiles();
+int main(){
+FILE * fptr;
+char ch;
+printf("----contents of input.txt----\n");
+fptr=fopen("input.txt", "r");
+if(fptr==NULL){
+printf("error opening input.txt for reading!\n");
+exit(1);
+}
+while((ch=fgetc(fptr)) !=EOF){
+putchar(ch);
+}
+printf("\n----contents on output.txt----\n");
+fptr=fopen("output.txt", "r");
+if(fptr==NULL){
+printf("error opening output.txt for reading!\n");
+exit(1);
+}
+while((ch=fgetc(fptr)) !=EOF){
+putchar (ch);
+}
+fclose(fptr);
+printf("\n-------------------------\n");
+return 0;
+}
